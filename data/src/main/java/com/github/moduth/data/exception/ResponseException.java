@@ -1,8 +1,8 @@
 package com.github.moduth.data.exception;
 
 import com.google.gson.Gson;
-import com.morecruit.domain.model.MrResponse;
-import com.morecruit.domain.model.user.Vuser;
+import com.github.moduth.domain.model.MrResponse;
+import com.github.moduth.domain.model.user.Vuser;
 
 /**
  * Say like response's is not successful with an error code.

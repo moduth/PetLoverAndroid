@@ -12,6 +12,16 @@ android {
         versionCode rootProject.ext.versionCode
         versionName rootProject.ext.versionName
     }
+
+    compileOptions {
+        sourceCompatibility rootProject.ext.javaVersion
+        sourceCompatibility rootProject.ext.javaVersion
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -23,11 +33,14 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile project(':domain')
+    compile project(':data')
     apt 'com.google.guava:guava:19.0' //gradle 2.1 use dagger2
     apt rootProject.ext.libDaggerCompiler
     compile rootProject.ext.libDagger
     compile rootProject.ext.libRxJava
     compile rootProject.ext.libRxAndroid
+    compile rootProject.ext.libRxBinding
     compile rootProject.ext.libSupportAppcompat
     compile rootProject.ext.libSupportV4
 }

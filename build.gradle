@@ -27,7 +27,7 @@ def daggerVersion = "2.4"
 def retrofitVersion = "2.0.2"
 def supportVersion = "23.3.0"
 def okHttpVersion = '3.2.0'
-
+def rxBindingVersion = '0.4.0'
 project.ext {
     applicationId = "com.github.moduth.petlover"
     buildToolsVersion = "23.0.3"
@@ -46,12 +46,12 @@ project.ext {
     libSupportAppcompat = "com.android.support:appcompat-v7:${supportVersion}"
     libSupportDesign = "com.android.support:design:${supportVersion}"
     libSupportV4 = "com.android.support:support-v4:${supportVersion}"
+    libRxBinding = "com.jakewharton.rxbinding:rxbinding:${rxBindingVersion}"
     libRxAndroid = "io.reactivex:rxandroid:1.1.0"
     libRxJava = "io.reactivex:rxjava:1.1.3"
     libEventBus = "org.greenrobot:eventbus:3.0.0"
     libJavaxAnnotation = "javax.annotation:jsr250-api:1.0"
     libJavaxInject = "javax.inject:javax.inject:1"
-
     libGson = "com.google.code.gson:gson:2.6.2"
     libRetrofit = "com.squareup.retrofit2:retrofit:${retrofitVersion}"
     libRetrofitConverterGson = "com.squareup.retrofit2:converter-gson:${retrofitVersion}"

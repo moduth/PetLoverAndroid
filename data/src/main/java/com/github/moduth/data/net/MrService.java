@@ -27,11 +27,11 @@ public final class MrService {
 
     private static final String TAG = "MrService";
 
-    private static final String API_DEV_URL = "https://qa.api.hicrew.cn";
-    private static final String API_PRODUCT_URL = "https://api.hicrew.cn";
+    private static final String API_DEV_URL = "your.api.com";
+    private static final String API_PRODUCT_URL = "your.api.com";
 
-    private static final String WEB_DEV_URL = "http://qa.m.hicrew.cn";
-    private static final String WEB_PRODUCT_URL = "http://m.hicrew.cn";
+    private static final String WEB_DEV_URL = "your.api.com";
+    private static final String WEB_PRODUCT_URL = "your.api.com";
 
     private static final boolean IS_DEV = false;
 

@@ -13,7 +13,7 @@
  */
 package com.github.moduth.data.executor;
 
-import com.morecruit.domain.executor.ThreadExecutor;
+import com.github.moduth.domain.executor.ThreadExecutor;
 
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
