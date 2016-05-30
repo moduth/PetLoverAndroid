@@ -15,6 +15,9 @@ public abstract class PLActivity extends AppCompatActivity {
 
     protected static final String TAG = "PLActivity";
     private ActivityModule mActivityModule;
+
+
+    String xx;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

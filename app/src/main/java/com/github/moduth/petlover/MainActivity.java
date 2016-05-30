@@ -28,7 +28,7 @@ public class MainActivity extends PLActivity {
 
 
     @Inject
-    private LoginUseCase mUserCase;
+    LoginUseCase mUserCase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
