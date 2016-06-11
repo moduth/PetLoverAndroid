@@ -23,9 +23,9 @@ import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public final class MrService {
+public final class PLService {
 
-    private static final String TAG = "MrService";
+    private static final String TAG = "PLService";
 
     private static final String API_DEV_URL = "http://your.api.com";
     private static final String API_PRODUCT_URL = "http://your.api.com";
@@ -33,11 +33,11 @@ public final class MrService {
     private static final String WEB_DEV_URL = "http://your.api.com";
     private static final String WEB_PRODUCT_URL = "http://your.api.com";
 
-    private static final boolean IS_DEV = false;
+    private static final boolean IS_DEV = true;
 
-    private static MrService mInstance;
+    private static PLService mInstance;
 
-    private static MrService mSyncInstance;
+    private static PLService mSyncInstance;
 
     public static String vuser = "";
 
@@ -47,22 +47,22 @@ public final class MrService {
         return IS_DEV ? WEB_DEV_URL : WEB_PRODUCT_URL;
     }
 
-    public static MrService getInstance() {
+    public static PLService getInstance() {
         if (mInstance == null) {
-            synchronized (MrService.class) {
+            synchronized (PLService.class) {
                 if (mInstance == null) {
-                    mInstance = new MrService();
+                    mInstance = new PLService();
                 }
             }
         }
         return mInstance;
     }
 
-    public static MrService getSynchronousInstance() {
+    public static PLService getSynchronousInstance() {
         if (mSyncInstance == null) {
-            synchronized (MrService.class) {
+            synchronized (PLService.class) {
                 if (mSyncInstance == null) {
-                    mSyncInstance = new MrService(false);
+                    mSyncInstance = new PLService(false);
                 }
             }
         }
@@ -73,11 +73,11 @@ public final class MrService {
         return mRetrofit.create(clazz);
     }
 
-    private MrService() {
+    private PLService() {
         this(true);
     }
 
-    private MrService(boolean useRxJava) {
+    private PLService(boolean useRxJava) {
         Retrofit.Builder builder = new Retrofit.Builder()
                 .baseUrl(IS_DEV ? API_DEV_URL : API_PRODUCT_URL)
                 .addConverterFactory(GsonConverterFactory.create())

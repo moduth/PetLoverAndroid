@@ -8,8 +8,9 @@ import com.github.moduth.petlover.internal.di.components.ApplicationComponent;
 import com.github.moduth.petlover.internal.di.modules.ActivityModule;
 
 /**
- * @author markzhai
- * @version 1.0.0
+ * Created by Abner on 16/5/27.
+ * Email nimengbo@gmail.com
+ * github https://github.com/nimengbo
  */
 public abstract class PLActivity extends AppCompatActivity {
 
@@ -17,7 +18,6 @@ public abstract class PLActivity extends AppCompatActivity {
     private ActivityModule mActivityModule;
 
 
-    String xx;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

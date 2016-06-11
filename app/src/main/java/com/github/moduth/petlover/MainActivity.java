@@ -60,7 +60,7 @@ public class MainActivity extends PLActivity {
 
             @Override
             public void onError(Throwable e) {
-                Logger.d("onError", "onError");
+                Logger.d("onError", e.getMessage());
             }
 
             @Override

@@ -38,7 +38,7 @@ dependencies {
     compile rootProject.ext.libRetrofitConverterGson
     compile rootProject.ext.libRetrofitAdapterRxJava
     compile rootProject.ext.libOkHttpLoggingInterceptor
-
+    compile rootProject.ext.libEventBus
 
     apt rootProject.ext.libDaggerCompiler
     compile rootProject.ext.libDagger

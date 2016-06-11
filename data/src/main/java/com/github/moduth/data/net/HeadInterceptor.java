@@ -40,7 +40,7 @@ public class HeadInterceptor implements Interceptor {
                 .addHeader("APPVER", Ext.g().getVersionName())
                 .addHeader("APP-BUILD-NO", Ext.g().getBuilderNumber())
                 // 用户凭证（登录、注册后获得的一个哈希字符串）
-                .addHeader("VUSER", MrService.vuser)
+                .addHeader("VUSER", PLService.vuser)
                 .addHeader("C-NETWORK", Network.getType().getName())
                 .addHeader("C-SCREEN-SCALE", String.valueOf(ViewUtils.getDensity())) //缩放比 1/2/3
                 .addHeader("C-PIC-MODE", "1") //图片浏览模式 0:无图 1:自适应 2:原图
