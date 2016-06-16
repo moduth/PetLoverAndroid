@@ -1,34 +1,37 @@
 package com.github.moduth.petlover;
 
 import android.databinding.DataBindingUtil;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.github.moduth.domain.interactor.user.LoginUseCase;
-import com.github.moduth.domain.model.user.Vuser;
 import com.github.moduth.petlover.databinding.ActivityMainBinding;
-import com.github.moduth.petlover.internal.di.components.ApplicationComponent;
 import com.github.moduth.petlover.internal.di.components.DaggerUserComponent;
-import com.github.moduth.petlover.internal.di.modules.ActivityModule;
 import com.github.moduth.petlover.internal.di.modules.UserModule;
+import com.github.moduth.petlover.model.UserModel;
+import com.github.moduth.petlover.presenter.UserPresenter;
+import com.github.moduth.petlover.presenter.UserLoginView;
+import com.github.moduth.petlover.view.MvpActivity;
 import com.jakewharton.rxbinding.view.RxView;
-import com.morecruit.ext.component.logger.Logger;
 
 import java.util.concurrent.TimeUnit;
 
 import javax.inject.Inject;
-import javax.inject.Named;
 
-import rx.Subscriber;
-
-public class MainActivity extends PLActivity {
+public class MainActivity extends MvpActivity<UserLoginView, UserPresenter> implements UserLoginView {
 
     private ActivityMainBinding mBinding;
     private rx.functions.Action1<Void> mLoginAction = aVoid -> login();
 
+    @Inject
+    UserPresenter mUserPresenter;
 
     @Inject
     LoginUseCase mUserCase;
+
+    @Override
+    public UserPresenter getPresenter() {
+        return mUserPresenter;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,26 +52,18 @@ public class MainActivity extends PLActivity {
                 .subscribe(mLoginAction);
     }
 
+    /**
+     * 这里只是为了mvp演示,其实这种登录单向操作的不需要用mvp
+     */
     private void login() {
 
-        mUserCase.setParam("moduth", "password");
-        mUserCase.execute(new Subscriber<Vuser>() {
-            @Override
-            public void onCompleted() {
-                Logger.d("onCompleted", "onCompleted");
-            }
+        mUserPresenter.initialize();
 
-            @Override
-            public void onError(Throwable e) {
-                Logger.d("onError", e.getMessage());
-            }
-
-            @Override
-            public void onNext(Vuser vuser) {
-                Logger.d("onNext", "onNext");
-            }
-        });
     }
 
 
+    @Override
+    public void userLogin(UserModel userModel) {
+        // TODO navigate to main page
+    }
 }

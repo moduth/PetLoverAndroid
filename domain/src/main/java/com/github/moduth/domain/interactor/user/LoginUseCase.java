@@ -20,7 +20,6 @@ public class LoginUseCase extends UseCase<Vuser> {
     private String username;
     private String password;
 
-    @Inject
     public LoginUseCase(UserRepository userRepository,
                         ThreadExecutor threadExecutor,
                         PostExecutionThread postExecutionThread) {
