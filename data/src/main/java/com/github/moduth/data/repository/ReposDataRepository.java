@@ -1,7 +1,7 @@
 package com.github.moduth.data.repository;
 
 import com.github.moduth.data.net.api.ReposApi;
-import com.github.moduth.domain.model.user.ReposEntity;
+import com.github.moduth.domain.model.repos.ReposEntity;
 import com.github.moduth.domain.repository.ReposRepository;
 
 import java.util.List;

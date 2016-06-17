@@ -3,7 +3,7 @@ package com.github.moduth.domain.repository;
 
 
 
-import com.github.moduth.domain.model.user.ReposEntity;
+import com.github.moduth.domain.model.repos.ReposEntity;
 
 import java.util.List;
 

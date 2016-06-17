@@ -3,7 +3,7 @@ package com.github.moduth.petlover.presenter;
 
 import com.github.moduth.domain.interactor.DefaultSubscriber;
 import com.github.moduth.domain.interactor.user.GetRepos;
-import com.github.moduth.domain.model.user.ReposEntity;
+import com.github.moduth.domain.model.repos.ReposEntity;
 import com.github.moduth.petlover.mapper.ReposDataMapper;
 import com.github.moduth.petlover.model.ReposModel;
 import com.morecruit.ext.component.logger.Logger;

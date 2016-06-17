@@ -2,7 +2,7 @@ package com.github.moduth.data.exception;
 
 import com.google.gson.Gson;
 import com.github.moduth.domain.model.MrResponse;
-import com.github.moduth.domain.model.user.ReposEntity;
+import com.github.moduth.domain.model.repos.ReposEntity;
 
 /**
  * Say like response's is not successful with an error code.

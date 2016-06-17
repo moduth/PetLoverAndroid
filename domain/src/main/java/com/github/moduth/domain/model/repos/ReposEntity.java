@@ -1,4 +1,4 @@
-package com.github.moduth.domain.model.user;
+package com.github.moduth.domain.model.repos;
 
 import com.google.gson.annotations.SerializedName;
 

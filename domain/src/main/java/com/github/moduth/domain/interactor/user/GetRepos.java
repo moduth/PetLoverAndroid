@@ -3,7 +3,7 @@ package com.github.moduth.domain.interactor.user;
 import com.github.moduth.domain.executor.PostExecutionThread;
 import com.github.moduth.domain.executor.ThreadExecutor;
 import com.github.moduth.domain.interactor.UseCase;
-import com.github.moduth.domain.model.user.ReposEntity;
+import com.github.moduth.domain.model.repos.ReposEntity;
 import com.github.moduth.domain.repository.ReposRepository;
 
 import java.util.List;

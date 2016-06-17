@@ -1,6 +1,6 @@
 package com.github.moduth.petlover.mapper;
 
-import com.github.moduth.domain.model.user.ReposEntity;
+import com.github.moduth.domain.model.repos.ReposEntity;
 import com.github.moduth.petlover.internal.di.PerActivity;
 import com.github.moduth.petlover.model.ReposModel;
 
