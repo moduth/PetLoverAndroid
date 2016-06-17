@@ -2,7 +2,7 @@ package com.github.moduth.data.exception;
 
 import com.google.gson.Gson;
 import com.github.moduth.domain.model.MrResponse;
-import com.github.moduth.domain.model.user.Vuser;
+import com.github.moduth.domain.model.user.ReposEntity;
 
 /**
  * Say like response's is not successful with an error code.
@@ -20,7 +20,7 @@ public class ResponseException extends Exception {
 
     private final int mStatusCode;
 
-    private Vuser mVuser;
+    private ReposEntity mReposEntity;
 
     /**
      * @param response 全局响应格式
@@ -31,7 +31,7 @@ public class ResponseException extends Exception {
 
         if (mStatusCode == ERROR_CODE_NEED_PERFECT_PROFILE) {
             Gson gson = new Gson();
-            mVuser = gson.fromJson(gson.toJson(response.data), Vuser.class);
+            mReposEntity = gson.fromJson(gson.toJson(response.data), ReposEntity.class);
         }
     }
 
@@ -54,7 +54,7 @@ public class ResponseException extends Exception {
         return mStatusCode;
     }
 
-    public Vuser getVuser() {
-        return mVuser;
+    public ReposEntity getReposEntity() {
+        return mReposEntity;
     }
 }

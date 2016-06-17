@@ -1,10 +1,8 @@
 package com.github.moduth.petlover.internal.di.modules;
 
-import android.content.Context;
 
-
-import com.github.moduth.data.repository.UserDataRepository;
-import com.github.moduth.domain.repository.UserRepository;
+import com.github.moduth.data.repository.ReposDataRepository;
+import com.github.moduth.domain.repository.ReposRepository;
 
 import javax.inject.Singleton;
 
@@ -21,7 +19,7 @@ public class RepositoryModule {
 
     @Provides
     @Singleton
-    UserRepository provideUserRepository(UserDataRepository userDataRepository) {
+    ReposRepository provideUserRepository(ReposDataRepository userDataRepository) {
         return userDataRepository;
     }
 

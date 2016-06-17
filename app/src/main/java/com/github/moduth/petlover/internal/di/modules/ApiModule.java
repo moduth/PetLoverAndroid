@@ -1,7 +1,7 @@
 package com.github.moduth.petlover.internal.di.modules;
 
 import com.github.moduth.data.net.PLService;
-import com.github.moduth.data.net.api.UserApi;
+import com.github.moduth.data.net.api.ReposApi;
 
 import javax.inject.Singleton;
 
@@ -19,8 +19,8 @@ public class ApiModule {
 
     @Provides
     @Singleton
-    UserApi getUserApi() {
-        return createApi(UserApi.class);
+    ReposApi getUserApi() {
+        return createApi(ReposApi.class);
     }
 
 

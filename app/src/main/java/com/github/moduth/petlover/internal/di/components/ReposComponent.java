@@ -3,7 +3,7 @@ package com.github.moduth.petlover.internal.di.components;
 import com.github.moduth.petlover.MainActivity;
 import com.github.moduth.petlover.internal.di.PerActivity;
 import com.github.moduth.petlover.internal.di.modules.ActivityModule;
-import com.github.moduth.petlover.internal.di.modules.UserModule;
+import com.github.moduth.petlover.internal.di.modules.ReposModule;
 
 
 import dagger.Component;
@@ -15,8 +15,8 @@ import dagger.Component;
  */
 @PerActivity
 @Component(dependencies = {ApplicationComponent.class},
-        modules = {ActivityModule.class, UserModule.class})
-public interface UserComponent extends ActivityComponent {
+        modules = {ActivityModule.class, ReposModule.class})
+public interface ReposComponent extends ActivityComponent {
 
     void inject(MainActivity activity);
 

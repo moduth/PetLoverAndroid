@@ -3,46 +3,49 @@ package com.github.moduth.petlover;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 
-import com.github.moduth.domain.interactor.user.LoginUseCase;
+import com.github.moduth.domain.interactor.user.GetRepos;
 import com.github.moduth.petlover.databinding.ActivityMainBinding;
-import com.github.moduth.petlover.internal.di.components.DaggerUserComponent;
-import com.github.moduth.petlover.internal.di.modules.UserModule;
-import com.github.moduth.petlover.model.UserModel;
-import com.github.moduth.petlover.presenter.UserPresenter;
-import com.github.moduth.petlover.presenter.UserLoginView;
+import com.github.moduth.petlover.internal.di.components.DaggerReposComponent;
+import com.github.moduth.petlover.internal.di.modules.ReposModule;
+import com.github.moduth.petlover.model.ReposModel;
+import com.github.moduth.petlover.presenter.ReposListPresenter;
+import com.github.moduth.petlover.presenter.ReposListView;
 import com.github.moduth.petlover.view.MvpActivity;
 import com.jakewharton.rxbinding.view.RxView;
+import com.morecruit.ext.component.logger.Logger;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import javax.inject.Inject;
 
-public class MainActivity extends MvpActivity<UserLoginView, UserPresenter> implements UserLoginView {
+public class MainActivity extends MvpActivity<ReposListView, ReposListPresenter> implements ReposListView {
 
     private ActivityMainBinding mBinding;
     private rx.functions.Action1<Void> mLoginAction = aVoid -> login();
 
     @Inject
-    UserPresenter mUserPresenter;
+    ReposListPresenter mReposListPresenter;
 
     @Inject
-    LoginUseCase mUserCase;
+    GetRepos mGetRepos;
 
     @Override
-    public UserPresenter getPresenter() {
-        return mUserPresenter;
+    public ReposListPresenter getPresenter() {
+        return mReposListPresenter;
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+
         mBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
-        DaggerUserComponent.builder()
+        DaggerReposComponent.builder()
                 .applicationComponent(getApplicationComponent())
                 .activityModule(getActivityModule())
-                .userModule(new UserModule())
+                .reposModule(new ReposModule())
                 .build()
                 .inject(this);
+        super.onCreate(savedInstanceState);
         initView();
     }
 
@@ -52,18 +55,16 @@ public class MainActivity extends MvpActivity<UserLoginView, UserPresenter> impl
                 .subscribe(mLoginAction);
     }
 
-    /**
-     * 这里只是为了mvp演示,其实这种登录单向操作的不需要用mvp
-     */
     private void login() {
 
-        mUserPresenter.initialize();
+        mReposListPresenter.initialize();
 
     }
 
 
     @Override
-    public void userLogin(UserModel userModel) {
+    public void userList(List<ReposModel> userModels) {
         // TODO navigate to main page
+        Logger.d("git",userModels.toArray());
     }
 }

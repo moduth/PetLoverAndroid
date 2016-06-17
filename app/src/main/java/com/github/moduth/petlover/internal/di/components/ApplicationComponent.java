@@ -10,7 +10,7 @@ import android.content.Context;
 
 import com.github.moduth.domain.executor.PostExecutionThread;
 import com.github.moduth.domain.executor.ThreadExecutor;
-import com.github.moduth.domain.repository.UserRepository;
+import com.github.moduth.domain.repository.ReposRepository;
 import com.github.moduth.petlover.PLActivity;
 import com.github.moduth.petlover.internal.di.modules.ApiModule;
 import com.github.moduth.petlover.internal.di.modules.ApplicationModule;
@@ -33,6 +33,6 @@ public interface ApplicationComponent {
 
     PostExecutionThread postExecutionThread();
 
-    UserRepository userRepository();
+    ReposRepository userRepository();
 
 }

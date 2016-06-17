@@ -27,8 +27,8 @@ public final class PLService {
 
     private static final String TAG = "PLService";
 
-    private static final String API_DEV_URL = "http://your.api.com";
-    private static final String API_PRODUCT_URL = "http://your.api.com";
+    private static final String API_DEV_URL = "https://api.github.com/";
+    private static final String API_PRODUCT_URL = "https://api.github.com/";
 
     private static final String WEB_DEV_URL = "http://your.api.com";
     private static final String WEB_PRODUCT_URL = "http://your.api.com";
