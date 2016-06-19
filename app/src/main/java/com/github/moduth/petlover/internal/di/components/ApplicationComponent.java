@@ -33,6 +33,6 @@ public interface ApplicationComponent {
 
     PostExecutionThread postExecutionThread();
 
-    ReposRepository userRepository();
+    ReposRepository reposRepository();
 
 }

@@ -3,7 +3,7 @@ package com.github.moduth.petlover;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 
-import com.github.moduth.domain.interactor.user.GetRepos;
+import com.github.moduth.domain.interactor.repo.GetRepos;
 import com.github.moduth.petlover.databinding.ActivityMainBinding;
 import com.github.moduth.petlover.internal.di.components.DaggerReposComponent;
 import com.github.moduth.petlover.internal.di.modules.ReposModule;
@@ -67,4 +67,5 @@ public class MainActivity extends MvpActivity<ReposListView, ReposListPresenter>
         // TODO navigate to main page
         Logger.d("git",userModels.toArray());
     }
+
 }

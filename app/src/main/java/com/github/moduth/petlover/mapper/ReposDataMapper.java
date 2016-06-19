@@ -21,16 +21,6 @@ public class ReposDataMapper {
     public ReposDataMapper(){
     }
 
-
-//    public ReposModel transform(ReposEntity reposEntity){
-//        if (reposEntity == null) {
-//            throw new IllegalArgumentException("Cannot transform a null value");
-//        }
-//        ReposModel userModel = new ReposModel();
-//        userModel.setId(reposEntity.vuser);
-//        return userModel;
-//    }
-
     public List<ReposModel> transform(List<ReposEntity> reposEntities){
         if(reposEntities == null){
             throw new IllegalArgumentException("Cannot transform a null value");

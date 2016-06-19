@@ -1,4 +1,4 @@
-package com.github.moduth.domain.interactor.user;
+package com.github.moduth.domain.interactor.repo;
 
 import com.github.moduth.domain.executor.PostExecutionThread;
 import com.github.moduth.domain.executor.ThreadExecutor;

@@ -20,7 +20,7 @@ import rx.Observable;
 public class ReposDataRepository implements ReposRepository {
 
     @Inject
-    ReposApi mUserApi;
+    ReposApi mReposApi;
 
     @Inject
     public ReposDataRepository() {
@@ -28,6 +28,6 @@ public class ReposDataRepository implements ReposRepository {
 
     @Override
     public Observable<List<ReposEntity>> getReposList(String user) {
-        return mUserApi.login(user);
+        return mReposApi.login(user);
     }
 }

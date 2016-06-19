@@ -2,7 +2,7 @@ package com.github.moduth.petlover.internal.di.modules;
 
 import com.github.moduth.domain.executor.PostExecutionThread;
 import com.github.moduth.domain.executor.ThreadExecutor;
-import com.github.moduth.domain.interactor.user.GetRepos;
+import com.github.moduth.domain.interactor.repo.GetRepos;
 import com.github.moduth.domain.repository.ReposRepository;
 import com.github.moduth.petlover.internal.di.PerActivity;
 

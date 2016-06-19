@@ -2,7 +2,7 @@ package com.github.moduth.petlover.presenter;
 
 
 import com.github.moduth.domain.interactor.DefaultSubscriber;
-import com.github.moduth.domain.interactor.user.GetRepos;
+import com.github.moduth.domain.interactor.repo.GetRepos;
 import com.github.moduth.domain.model.repos.ReposEntity;
 import com.github.moduth.petlover.mapper.ReposDataMapper;
 import com.github.moduth.petlover.model.ReposModel;
@@ -43,14 +43,11 @@ public class ReposListPresenter extends MvpBasePresenter<ReposListView> {
         getUserList();
     }
 
-
-
-    private void navigateAfterLogin(List<ReposEntity> reposEntity) {
+    private void processUserList(List<ReposEntity> reposEntity) {
         final List<ReposModel> reposModels = mUserModelDataMapper.transform(reposEntity);
         getView().userList(reposModels);
     }
 
-    @SuppressWarnings("unchecked")
     private void getUserList() {
         mGetRepos.setParam("moduth");
         mGetRepos.execute(new UserSubscriber());
@@ -59,18 +56,15 @@ public class ReposListPresenter extends MvpBasePresenter<ReposListView> {
     private class UserSubscriber extends DefaultSubscriber<List<ReposEntity>> {
         @Override
         public void onCompleted() {
-            Logger.d("onCompleted", "onCompleted");
         }
 
         @Override
         public void onError(Throwable e) {
-            Logger.d("onError", e.getMessage());
         }
 
         @Override
         public void onNext(List<ReposEntity> reposEntity) {
-            Logger.d("onNext", "onNext");
-            navigateAfterLogin(reposEntity);
+            processUserList(reposEntity);
         }
     }
 }
