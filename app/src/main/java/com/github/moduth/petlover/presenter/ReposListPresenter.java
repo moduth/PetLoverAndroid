@@ -12,6 +12,8 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+import rx.Subscriber;
+
 /**
  * Created by Abner on 16/6/16.
  * Email nimengbo@gmail.com
@@ -21,12 +23,14 @@ public class ReposListPresenter extends MvpBasePresenter<ReposListView> {
 
     private final GetRepos mGetRepos;
     private final ReposDataMapper mUserModelDataMapper;
+    private Subscriber<List<ReposEntity>> mSubscriber;
 
     @Inject
     public ReposListPresenter(GetRepos getRepos,
                               ReposDataMapper userModelDataMapper) {
         mGetRepos = getRepos;
         mUserModelDataMapper = userModelDataMapper;
+        mSubscriber = new UserSubscriber();
     }
 
     @Override
@@ -50,7 +54,7 @@ public class ReposListPresenter extends MvpBasePresenter<ReposListView> {
 
     private void getUserList() {
         mGetRepos.setParam("moduth");
-        mGetRepos.execute(new UserSubscriber());
+        mGetRepos.execute(mSubscriber);
     }
 
     private class UserSubscriber extends DefaultSubscriber<List<ReposEntity>> {
