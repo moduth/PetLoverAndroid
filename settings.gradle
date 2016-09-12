@@ -1,3 +1,0 @@
-include ':app', ':data' , ':domain'
-include ':lib_ext'
-project(':lib_ext').projectDir = new File('sdk/lib_ext')
